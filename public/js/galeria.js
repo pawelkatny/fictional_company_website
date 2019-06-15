@@ -9,9 +9,6 @@ fetch("/galeria")
       const kontener = document.createElement("div");
       kontener.setAttribute("class", "kontener");
 
-      const kafel = document.createElement("div");
-      kafel.setAttribute("class", "kafel");
-
       const tytul = document.createElement("div");
       tytul.setAttribute("class", "tytul");
 
@@ -25,9 +22,8 @@ fetch("/galeria")
       img.src = obj.img;
 
       wyjscie.appendChild(kontener);
-      kontener.appendChild(kafel);
-      kafel.appendChild(tytul);
-      kafel.appendChild(img);
-      kafel.appendChild(opis);
+      kontener.appendChild(tytul);
+      kontener.appendChild(img);
+      kontener.appendChild(opis);
     });
   });
