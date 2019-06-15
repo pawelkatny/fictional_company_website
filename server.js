@@ -21,15 +21,16 @@ app.get("/index", (req, res, next) => {
     if (err) {
       console.log("Can not connect to the DB" + err);
       done();
+    } else {
+      dBase.query("SELECT text FROM index", (err, result) => {
+        if (err) {
+          res.status(400).send(err);
+        }
+        const dbData = result.rows.map(row => row.text);
+        res.status(200).send(dbData);
+        done();
+      });
     }
-    dBase.query("SELECT text FROM index", (err, result) => {
-      if (err) {
-        res.status(400).send(err);
-      }
-      const dbData = result.rows.map(row => row.text);
-      res.status(200).send(dbData);
-      done();
-    });
   });
 });
 
@@ -38,15 +39,16 @@ app.get("/produkty", (req, res, next) => {
     if (err) {
       console.log("Can not connect to the DB" + err);
       done();
+    } else {
+      dBase.query("SELECT text FROM produkty", (err, result) => {
+        if (err) {
+          res.status(400).send(err);
+        }
+        const dbData = result.rows.map(row => row.text);
+        res.status(200).send(dbData);
+        done();
+      });
     }
-    dBase.query("SELECT text FROM produkty", (err, result) => {
-      if (err) {
-        res.status(400).send(err);
-      }
-      const dbData = result.rows.map(row => row.text);
-      res.status(200).send(dbData);
-      done();
-    });
   });
 });
 
@@ -119,7 +121,7 @@ app.get("/galeria", (req, res, next) => {
 });
 
 app.get("/", (req, res, next) => {
-  res.redirect('/index');
+  res.redirect("/index");
 });
 
 app.listen(port, () => {
