@@ -57,7 +57,7 @@ app.get("/onas", (req, res, next) => {
     if (err) {
       console.log("Can not connect to the DB" + err);
       done();
-    }
+    } else {
     dBase.query("SELECT text FROM onas", (err, result) => {
       if (err) {
         res.status(400).send(err);
@@ -66,6 +66,7 @@ app.get("/onas", (req, res, next) => {
       res.status(200).send(dbData);
       done();
     });
+  }
   });
 });
 
@@ -74,7 +75,7 @@ app.get("/kontakt", (req, res, next) => {
     if (err) {
       console.log("Can not connect to the DB" + err);
       done();
-    }
+    } else {
     dBase.query("SELECT text FROM kontakt", (err, result) => {
       if (err) {
         res.status(400).send(err);
@@ -83,6 +84,7 @@ app.get("/kontakt", (req, res, next) => {
       res.status(200).send(dbData);
       done();
     });
+  }
   });
 });
 
@@ -91,7 +93,7 @@ app.get("/projekt", (req, res, next) => {
     if (err) {
       console.log("Can not connect to the DB" + err);
       done();
-    }
+    } else {}
     dBase.query("SELECT text FROM projekt", (err, result) => {
       if (err) {
         res.status(400).send(err);
@@ -100,6 +102,7 @@ app.get("/projekt", (req, res, next) => {
       res.status(200).send(dbData);
       done();
     });
+  }
   });
 });
 
