@@ -20,6 +20,7 @@ app.get("/index", (req, res, next) => {
   dbConnection.connect((err, dBase, done) => {
     if (err) {
       console.log("Can not connect to the DB" + err);
+      done();
     }
     dBase.query("SELECT text FROM index", (err, result) => {
       if (err) {
@@ -36,6 +37,7 @@ app.get("/produkty", (req, res, next) => {
   dbConnection.connect((err, dBase, done) => {
     if (err) {
       console.log("Can not connect to the DB" + err);
+      done();
     }
     dBase.query("SELECT text FROM produkty", (err, result) => {
       if (err) {
@@ -52,6 +54,7 @@ app.get("/onas", (req, res, next) => {
   dbConnection.connect((err, dBase, done) => {
     if (err) {
       console.log("Can not connect to the DB" + err);
+      done();
     }
     dBase.query("SELECT text FROM onas", (err, result) => {
       if (err) {
@@ -68,6 +71,7 @@ app.get("/kontakt", (req, res, next) => {
   dbConnection.connect((err, dBase, done) => {
     if (err) {
       console.log("Can not connect to the DB" + err);
+      done();
     }
     dBase.query("SELECT text FROM kontakt", (err, result) => {
       if (err) {
@@ -84,6 +88,7 @@ app.get("/projekt", (req, res, next) => {
   dbConnection.connect((err, dBase, done) => {
     if (err) {
       console.log("Can not connect to the DB" + err);
+      done();
     }
     dBase.query("SELECT text FROM projekt", (err, result) => {
       if (err) {
@@ -100,6 +105,7 @@ app.get("/galeria", (req, res, next) => {
   dbConnection.connect((err, dBase, done) => {
     if (err) {
       console.log("Can not connect to the DB" + err);
+      done();
     }
     dBase.query("SELECT tytul, opis, img FROM galeria", (err, result) => {
       if (err) {
