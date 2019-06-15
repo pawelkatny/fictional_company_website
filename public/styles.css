@@ -1,0 +1,112 @@
+* {
+  font-family: Calibri, Verdana, Tahoma;
+}
+
+body {
+  background-color: white;
+}
+
+/* logo na samej gorze*/
+header > img {
+  display: block;
+  width: 40%;
+  margin: 2% auto;
+}
+
+nav,
+footer {
+  margin: auto;
+}
+/* pasek nawigacji */
+nav {
+  width: 60%;
+  text-align: center;
+  border-top: 0.05em solid rgb(0, 172, 92);
+  border-bottom: 0.05em solid rgb(0, 172, 92);
+}
+
+nav > a {
+  display: inline-block;
+  margin: 0.5em 1em;
+  color: rgb(0, 172, 92);
+  font-size: 1.5em;
+}
+
+nav > a:link,
+a:visited,
+a:hover {
+  text-decoration: none;
+}
+
+nav > a:hover {
+  text-shadow: 0.01em 0.01em 0.1em;
+}
+
+/* tekst opisowy */
+article {
+  width: 60%;
+  margin: 3% auto 5% auto;
+}
+
+#index,
+#produkty,
+#onas,
+#kontakt,
+#galeria,
+#projekt {
+  font-size: 1.25em;
+  text-align: justify;
+}
+
+#index > p:nth-child(odd),
+#onas > p:nth-child(odd) {
+  font-weight: bold;
+}
+
+#produkty > p:first-child,
+#projekt > p:first-child {
+  font-weight: bold;
+}
+
+/* galeria */
+
+.kontener {
+  width: 44%;
+  float: left;
+  margin: 3%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.kafel img {
+  width: 100%;
+  border-top: 0.05em solid;
+  border-bottom: 0.05em solid;
+}
+
+.tytul,
+.opis {
+  font-size: 1vw;
+  font-weight: bold;
+  text-align: center;
+  padding: 5%;
+}
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/*pasek na dole */
+
+footer {
+  width: 60%;
+  text-align: center;
+  border-top: 0.05em solid rgb(0, 172, 92);
+  font-size: 1em;
+}
+
+footer > p > a {
+  color: rgb(0, 172, 92);
+  text-decoration: none;
+}
