@@ -5,12 +5,8 @@ const pg = require("pg");
 const port = process.env.PORT || 3000;
 
 const dbConfig = {
-  host: "ec2-54-75-230-253.eu-west-1.compute.amazonaws.com",
-  user: "csryunnawozdhf",
-  database: "d8u1b510158evr",
-  password: "ca7f77542a3b50837bf6076c5c2f97b18b79e954b9d6fc4f20493eab76d45db9",
-  port: 5432,
-  ssl: true,
+  connectionString: process.env.DATABASE_URL,
+  ssl: true
 };
 
 const dbConnection = new pg.Pool(dbConfig);
