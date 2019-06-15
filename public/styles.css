@@ -71,7 +71,9 @@ article {
 /* galeria */
 #galeria {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  justify-items: center;
+  align-items: center;
 }
 
 
@@ -90,10 +92,10 @@ article {
 
 .tytul,
 .opis {
-  font-size: 1vw;
+  font-size: 1em;
   font-weight: bold;
   text-align: center;
-  padding: 5%;
+  padding: 10px;
 }
 
 .clearfix:after {
