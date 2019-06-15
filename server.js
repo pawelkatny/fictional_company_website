@@ -2,6 +2,8 @@ const express = require("express");
 const app = express();
 const pg = require("pg");
 
+const port = process.env.PORT || 3000;
+
 const dbConfig = {
   user: "users",
   database: "postgres",
@@ -114,6 +116,6 @@ app.get("/", (req, res, next) => {
   res.redirect('/index');
 });
 
-app.listen(3000, () => {
+app.listen(port, () => {
   console.log("Server started and running...");
 });
