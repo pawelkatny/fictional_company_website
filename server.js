@@ -58,15 +58,15 @@ app.get("/onas", (req, res, next) => {
       console.log("Can not connect to the DB" + err);
       done();
     } else {
-    dBase.query("SELECT text FROM onas", (err, result) => {
-      if (err) {
-        res.status(400).send(err);
-      }
-      const dbData = result.rows.map(row => row.text);
-      res.status(200).send(dbData);
-      done();
-    });
-  }
+      dBase.query("SELECT text FROM onas", (err, result) => {
+        if (err) {
+          res.status(400).send(err);
+        }
+        const dbData = result.rows.map(row => row.text);
+        res.status(200).send(dbData);
+        done();
+      });
+    }
   });
 });
 
@@ -76,15 +76,15 @@ app.get("/kontakt", (req, res, next) => {
       console.log("Can not connect to the DB" + err);
       done();
     } else {
-    dBase.query("SELECT text FROM kontakt", (err, result) => {
-      if (err) {
-        res.status(400).send(err);
-      }
-      const dbData = result.rows.map(row => row.text);
-      res.status(200).send(dbData);
-      done();
-    });
-  }
+      dBase.query("SELECT text FROM kontakt", (err, result) => {
+        if (err) {
+          res.status(400).send(err);
+        }
+        const dbData = result.rows.map(row => row.text);
+        res.status(200).send(dbData);
+        done();
+      });
+    }
   });
 });
 
@@ -93,16 +93,16 @@ app.get("/projekt", (req, res, next) => {
     if (err) {
       console.log("Can not connect to the DB" + err);
       done();
-    } else {}
-    dBase.query("SELECT text FROM projekt", (err, result) => {
-      if (err) {
-        res.status(400).send(err);
-      }
-      const dbData = result.rows.map(row => row.text);
-      res.status(200).send(dbData);
-      done();
-    });
-  }
+    } else {
+      dBase.query("SELECT text FROM projekt", (err, result) => {
+        if (err) {
+          res.status(400).send(err);
+        }
+        const dbData = result.rows.map(row => row.text);
+        res.status(200).send(dbData);
+        done();
+      });
+    }
   });
 });
 
@@ -111,15 +111,16 @@ app.get("/galeria", (req, res, next) => {
     if (err) {
       console.log("Can not connect to the DB" + err);
       done();
+    } else {
+      dBase.query("SELECT tytul, opis, img FROM galeria", (err, result) => {
+        if (err) {
+          res.status(400).send(err);
+        }
+        const dbData = result.rows;
+        res.status(200).send(dbData);
+        done();
+      });
     }
-    dBase.query("SELECT tytul, opis, img FROM galeria", (err, result) => {
-      if (err) {
-        res.status(400).send(err);
-      }
-      const dbData = result.rows;
-      res.status(200).send(dbData);
-      done();
-    });
   });
 });
 
